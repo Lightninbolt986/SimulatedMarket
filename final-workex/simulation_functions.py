@@ -1,7 +1,7 @@
 import mysql.connector
 def insert(adno,company,amount,prices):
     try:
-        db=mysql.connector.connect(host='localhost', user='root', password='5120', database='workex')
+        db=mysql.connector.connect(host='localhost', user='root', password='', database='')
         mc= db.cursor()
         mc.execute(f'select cash_in_hand,{company} from students where admission_no={adno}')
         fetch= mc.fetchall()
@@ -27,7 +27,7 @@ def insert(adno,company,amount,prices):
 
 def delete(adno,company,amount,prices):
     try:
-        db=mysql.connector.connect(host='localhost', user='root', password='5120', database='workex')
+        db=mysql.connector.connect(host='localhost', user='root', password='', database='')
         mc= db.cursor()
         mc.execute(f'select cash_in_hand,{company} from students where admission_no={adno}')
         fetch= mc.fetchall()
