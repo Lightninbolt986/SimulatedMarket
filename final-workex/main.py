@@ -1,7 +1,6 @@
 import mysql.connector
 import flask as f
 from simulation_functions import *
-import time
 
 app = f.Flask(__name__, template_folder='', static_folder='')
 app.config.update(TEMPLATES_AUTO_RELOAD=True)
@@ -30,7 +29,7 @@ def home():
         except:
             display='invalid no of shares'
         
-    db=mysql.connector.connect(host='localhost', user='root', password='5120', database='workex')
+    db=mysql.connector.connect(host='localhost', user='root', password='', database='workex')
     cur = db.cursor()
     cur.execute('select * from students;')
     data=cur.fetchall()
