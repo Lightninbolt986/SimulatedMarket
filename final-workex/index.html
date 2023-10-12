@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>testing</title>
+    <link
+      rel="stylesheet"
+      ,
+      href="{{url_for('static', filename='style.css')}}"
+    />
+  </head>
+  <table>
+    <thead>
+      <tr>
+        <th>Admission No.</th>
+        <th>Cash in Hand</th>
+        <th>HDFC</th>
+        <th>UCO</th>
+        <th>ZOMATO</th>
+        <th>HINDUSTAN_UNI</th>
+        <th>CIPLA</th>
+        <th>TATA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+        <td>{{row[5]}}</td>
+        <td>{{row[6]}}</td>
+        <td>{{row[7]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+<section class="forms">
+
+<form action="/" method="post">
+  <fieldset class="buy">
+    <legend ">BUY</legend>
+    <label for="admno">Admission No: </label>
+    <input type="text" id="admno" name="admno"/>
+
+    <label for="company">Company: </label>
+    <select name="company" id="company">
+      <option value="HDFC">HDFC</option>
+      <option value="UCO">UCO</option>
+      <option value="ZOMATO">ZOMATO</option>
+      <option value="HINDUSTAN_UNI">HINDUSTAN_UNI</option>
+      <option value="CIPLA">CIPLA</option>
+      <option value="TATA">TATA</option>
+    </select>
+
+    <label for="company">Number of shares: </label>
+    <input type="number" id="noshares" name="noshares">
+
+    <input type="submit" value="submit" name="buy">
+  </fieldset>
+</form>
+
+<form action="/" method="post">
+  <fieldset class="sell">
+    <legend ">SELL</legend>
+    <label for="admno">Admission No: </label>
+    <input type="text" id="admno" name="admno"/>
+    <label for="company">Company: </label>
+    <select name="company" id="company">
+      <option value="HDFC">HDFC</option>
+      <option value="UCO">UCO</option>
+      <option value="ZOMATO">ZOMATO</option>
+      <option value="HINDUSTAN_UNI">HINDUSTAN_UNI</option>
+      <option value="CIPLA">CIPLA</option>
+      <option value="TATA">TATA</option>
+    </select>
+
+    <label for="company">Number of shares: </label>
+    <input type="number" id="noshares" name="noshares">
+
+    <input type="submit" value="submit" name="sell">
+  </fieldset>
+</form>
+
+</section>
+
+<h1>{{display}}</h1>
+
+
+<br>
+<br>
+<br>
+<h2>current prices:</h2>
+<h2>{{prices}}</h2>
+</html>
