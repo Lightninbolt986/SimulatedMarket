@@ -6,7 +6,7 @@ app = f.Flask(__name__, template_folder='', static_folder='')
 app.config.update(TEMPLATES_AUTO_RELOAD=True)
 app.secret_key='yorealnocapfrfr'
 
-prices = {'hdfc':1232,'uco':5000,'zomato':61,'hindustan_uni':2500,'cipla':920,'tata':450}
+prices = {'hdfc':1232,'uco':11,'zomato':61,'hindustan_uni':2500,'cipla':920,'tata':450}
 
 @app.route('/', methods=['POST','GET'])
 def home():
@@ -29,7 +29,7 @@ def home():
         except:
             display='invalid no of shares'
         
-    db=mysql.connector.connect(host='localhost', user='root', password='', database='workex')
+    db=mysql.connector.connect(host='localhost', user='root', password='', database='')
     cur = db.cursor()
     cur.execute('select * from students;')
     data=cur.fetchall()
